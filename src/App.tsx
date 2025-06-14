@@ -22,6 +22,7 @@ const App: React.FC = () => {
     "book-consultation": <BookConsultation />,
   };
 
+  // TODO: Decide whether we want to use Tailwind or not
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
