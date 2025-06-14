@@ -33,7 +33,8 @@ const TestPrep: React.FC = () => {
   return (
     <ServicePageLayout
       pageTitle="Test Prep and Tutoring"
-      imagePlaceholderText="Image Placeholder - Replace with tutoring/test prep image"
+      imageSrc="/images/services/test-prep.jpg"
+      imageAlt="One-on-one tutoring session with student and tutor working together on study materials"
       sections={sections}
       ctaText="SCHEDULE A FREE CONSULTATION →"
     />

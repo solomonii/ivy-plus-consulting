@@ -38,7 +38,8 @@ const CollegeCounseling: React.FC = () => {
   return (
     <ServicePageLayout
       pageTitle="Expert College Counseling Services"
-      imagePlaceholderText="Image Placeholder - Replace with forest path image"
+      imageSrc="/images/services/college-counseling.jpg"
+      imageAlt="Aerial view of a winding path through a forest, symbolizing the journey to college"
       sections={sections}
     />
   );

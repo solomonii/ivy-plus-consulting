@@ -1,4 +1,5 @@
 import React from "react";
+import StyledImage from "../components/StyledImage";
 
 const Home: React.FC = () => {
   return (
@@ -22,12 +23,12 @@ const Home: React.FC = () => {
       {/* Expert College Counseling Section */}
       <section className="py-16 px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          {/* Image Placeholder */}
-          <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-            <p className="text-gray-500">
-              Image Placeholder - Replace with graduation cap toss image
-            </p>
-          </div>
+          {/* Image */}
+          <StyledImage
+            src="/images/home/graduation-caps.jpg"
+            alt="College students throwing graduation caps in celebration"
+            className="h-96 rounded-lg"
+          />
 
           {/* Content */}
           <div>

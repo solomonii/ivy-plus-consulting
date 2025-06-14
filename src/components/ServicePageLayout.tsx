@@ -1,4 +1,5 @@
 import React from "react";
+import StyledImage from "./StyledImage";
 
 interface ServiceSection {
   title: string;
@@ -7,7 +8,9 @@ interface ServiceSection {
 
 interface ServicePageLayoutProps {
   pageTitle: string;
-  imagePlaceholderText: string;
+  imagePlaceholderText?: string;
+  imageSrc?: string;
+  imageAlt?: string;
   sections: ServiceSection[];
   ctaText?: string;
   ctaLink?: () => void;
@@ -16,6 +19,8 @@ interface ServicePageLayoutProps {
 const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
   pageTitle,
   imagePlaceholderText,
+  imageSrc,
+  imageAlt,
   sections,
   ctaText = "BOOK A FREE CONSULTATION →",
   ctaLink,
@@ -33,11 +38,19 @@ const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
           {/* Left Column - Image */}
           <div className="md:sticky md:top-8">
-            <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-              <p className="text-gray-500 text-center px-4">
-                {imagePlaceholderText}
-              </p>
-            </div>
+            {imageSrc && imageAlt ? (
+              <StyledImage
+                src={imageSrc}
+                alt={imageAlt}
+                className="h-96 rounded-lg"
+              />
+            ) : (
+              <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
+                <p className="text-gray-500 text-center px-4">
+                  {imagePlaceholderText}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Right Column - Services */}

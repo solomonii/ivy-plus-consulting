@@ -33,7 +33,8 @@ const MedicalSchoolCounseling: React.FC = () => {
   return (
     <ServicePageLayout
       pageTitle="Medical School Counseling Services"
-      imagePlaceholderText="Image Placeholder - Replace with medical students/doctors image"
+      imageSrc="/images/services/medical-school.jpg"
+      imageAlt="Medical students in white coats collaborating and discussing in a clinical setting"
       sections={sections}
     />
   );

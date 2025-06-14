@@ -1,4 +1,5 @@
 import React from "react";
+import StyledImage from "../components/StyledImage";
 
 const AboutUs: React.FC = () => {
   return (
@@ -11,14 +12,14 @@ const AboutUs: React.FC = () => {
 
       {/* Main Content */}
       <section className="py-16 px-8">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
           {/* Left Column - Image */}
-          <div>
-            <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-              <p className="text-gray-500">
-                Image Placeholder - Replace with Grace's photo
-              </p>
-            </div>
+          <div className="h-[500px] md:h-[600px]">
+            <StyledImage
+              src="/images/about/grace-park.jpg"
+              alt="Grace Park, Founder and CEO of Ivy Plus Consulting"
+              className="h-full rounded-lg"
+            />
           </div>
 
           {/* Right Column - Content */}

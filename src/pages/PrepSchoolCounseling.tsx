@@ -28,7 +28,8 @@ const PrepSchoolCounseling: React.FC = () => {
   return (
     <ServicePageLayout
       pageTitle="Private School Counseling Services"
-      imagePlaceholderText="Image Placeholder - Replace with prep school campus image"
+      imageSrc="/images/services/prep-school.jpg"
+      imageAlt="Students walking on a prestigious prep school campus with classical architecture"
       sections={sections}
     />
   );
