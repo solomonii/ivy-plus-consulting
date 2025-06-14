@@ -1,7 +1,9 @@
 import React from "react";
 import StyledImage from "../components/StyledImage";
+import usePageTitle from "../hooks/usePageTitle";
 
 const AboutUs: React.FC = () => {
+  usePageTitle("About Us");
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}

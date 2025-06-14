@@ -1,6 +1,8 @@
 import React from "react";
+import usePageTitle from "../hooks/usePageTitle";
 
 const BookConsultation: React.FC = () => {
+  usePageTitle("Contact Us");
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}

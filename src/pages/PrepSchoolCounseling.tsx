@@ -1,7 +1,9 @@
 import React from "react";
 import ServicePageLayout from "../components/ServicePageLayout";
+import usePageTitle from "../hooks/usePageTitle";
 
 const PrepSchoolCounseling: React.FC = () => {
+  usePageTitle("Prep School Counseling");
   const sections = [
     {
       title: "Comprehensive Application Strategy Development",

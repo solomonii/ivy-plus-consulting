@@ -1,7 +1,9 @@
 import React from "react";
 import StyledImage from "../components/StyledImage";
+import usePageTitle from "../hooks/usePageTitle";
 
 const Home: React.FC = () => {
+  usePageTitle(""); // Empty string for home page - will show "Ivy+ Consulting"
   return (
     <div>
       {/* Hero Section */}

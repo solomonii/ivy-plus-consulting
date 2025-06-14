@@ -1,7 +1,9 @@
 import React from "react";
 import ServicePageLayout from "../components/ServicePageLayout";
+import usePageTitle from "../hooks/usePageTitle";
 
 const TestPrep: React.FC = () => {
+  usePageTitle("Test Prep");
   const sections = [
     {
       title: "SAT, ACT, AP",
