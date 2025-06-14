@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Navigation from "./components/Navigation";
+import AboutUs from "./pages/AboutUs";
+import BookConsultation from "./pages/BookConsultation";
+import CollegeCounseling from "./pages/CollegeCounseling";
+import Home from "./pages/Home";
+import MedicalSchoolCounseling from "./pages/MedicalSchoolCounseling";
+import PrepSchoolCounseling from "./pages/PrepSchoolCounseling";
+import TestPrep from "./pages/TestPrep";
+import { PageName } from "./types";
 
-function App() {
+const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<PageName>("home");
+
+  const pages: Record<PageName, React.ReactElement> = {
+    home: <Home />,
+    "college-counseling": <CollegeCounseling />,
+    "prep-school-counseling": <PrepSchoolCounseling />,
+    "medical-school-counseling": <MedicalSchoolCounseling />,
+    "test-prep": <TestPrep />,
+    "about-us": <AboutUs />,
+    "book-consultation": <BookConsultation />,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gray-50">
+      <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <main>{pages[currentPage]}</main>
     </div>
   );
-}
+};
 
 export default App;
