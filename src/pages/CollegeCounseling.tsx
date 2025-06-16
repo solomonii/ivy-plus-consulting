@@ -4,6 +4,7 @@ import usePageTitle from "../hooks/usePageTitle";
 
 const CollegeCounseling: React.FC = () => {
   usePageTitle("College Counseling");
+
   const sections = [
     {
       title: "Personalized College Planning",

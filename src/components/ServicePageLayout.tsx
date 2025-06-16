@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import StyledImage from "./StyledImage";
 
 interface ServiceSection {
@@ -13,7 +14,7 @@ interface ServicePageLayoutProps {
   imageAlt?: string;
   sections: ServiceSection[];
   ctaText?: string;
-  ctaLink?: () => void;
+  ctaLink?: string;
 }
 
 const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
@@ -23,7 +24,7 @@ const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
   imageAlt,
   sections,
   ctaText = "BOOK A FREE CONSULTATION →",
-  ctaLink,
+  ctaLink = "/contact",
 }) => {
   return (
     <div className="min-h-screen bg-white">
@@ -66,12 +67,12 @@ const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
 
             {/* CTA Button */}
             <div className="pt-8">
-              <button
-                onClick={ctaLink}
-                className="bg-white text-black border-2 border-black px-6 py-3 font-semibold hover:bg-black hover:text-white transition-colors duration-200"
+              <Link
+                to={ctaLink}
+                className="inline-block bg-white text-black border-2 border-black px-6 py-3 font-semibold hover:bg-black hover:text-white transition-colors duration-200"
               >
                 {ctaText}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

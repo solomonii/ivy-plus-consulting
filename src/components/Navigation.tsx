@@ -1,34 +1,26 @@
 import React, { useState } from "react";
-import { PageName } from "../types";
+import { Link, useLocation } from "react-router-dom";
 
-interface NavigationProps {
-  currentPage: PageName;
-  setCurrentPage: (page: PageName) => void;
-}
-
-const Navigation: React.FC<NavigationProps> = ({
-  currentPage,
-  setCurrentPage,
-}) => {
+const Navigation: React.FC = () => {
   const [servicesOpen, setServicesOpen] = useState<boolean>(false);
-
-  const handleServiceClick = (page: PageName): void => {
-    setCurrentPage(page);
-    setServicesOpen(false);
-  };
+  const location = useLocation();
 
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <div className="font-bold text-xl">Ivy Plus Consulting</div>
+          <Link to="/" className="font-bold text-xl">
+            Ivy Plus Consulting
+          </Link>
           <div className="flex items-center space-x-8">
-            <button
-              onClick={() => setCurrentPage("home")}
-              className="hover:text-blue-600"
+            <Link
+              to="/"
+              className={`hover:text-blue-600 ${
+                location.pathname === "/" ? "text-blue-600" : ""
+              }`}
             >
               Home
-            </button>
+            </Link>
 
             {/* Services Dropdown */}
             <div
@@ -46,49 +38,53 @@ const Navigation: React.FC<NavigationProps> = ({
                   className="absolute left-0 mt-0 w-48 bg-white shadow-lg rounded-md z-10"
                   onMouseEnter={() => setServicesOpen(true)}
                 >
-                  <button
-                    onClick={() => handleServiceClick("college-counseling")}
+                  <Link
+                    to="/college-counseling"
                     className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setServicesOpen(false)}
                   >
                     College Counseling
-                  </button>
-                  <button
-                    onClick={() => handleServiceClick("prep-school-counseling")}
+                  </Link>
+                  <Link
+                    to="/prep-school-counseling"
                     className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setServicesOpen(false)}
                   >
                     Prep School Counseling
-                  </button>
-                  <button
-                    onClick={() =>
-                      handleServiceClick("medical-school-counseling")
-                    }
+                  </Link>
+                  <Link
+                    to="/medical-school-counseling"
                     className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setServicesOpen(false)}
                   >
                     Medical School Counseling
-                  </button>
-                  <button
-                    onClick={() => handleServiceClick("test-prep")}
+                  </Link>
+                  <Link
+                    to="/test-prep"
                     className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setServicesOpen(false)}
                   >
                     Test Prep
-                  </button>
+                  </Link>
                 </div>
               )}
             </div>
 
-            <button
-              onClick={() => setCurrentPage("about-us")}
-              className="hover:text-blue-600"
+            <Link
+              to="/about-us"
+              className={`hover:text-blue-600 ${
+                location.pathname === "/about-us" ? "text-blue-600" : ""
+              }`}
             >
               About Us
-            </button>
+            </Link>
 
-            <button
-              onClick={() => setCurrentPage("book-consultation")}
+            <Link
+              to="/contact"
               className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
             >
               Book a Free Consultation
-            </button>
+            </Link>
           </div>
         </div>
       </div>
