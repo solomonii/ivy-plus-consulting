@@ -2,8 +2,12 @@ import React from "react";
 import StyledImage from "../components/StyledImage";
 import usePageTitle from "../hooks/usePageTitle";
 
+// Import the image explicitly from public folder
+import GracePark from "/images/about/Grace-Park-1.jpeg";
+
 const AboutUs: React.FC = () => {
   usePageTitle("About Us");
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}
@@ -18,7 +22,7 @@ const AboutUs: React.FC = () => {
           {/* Left Column - Image */}
           <div className="h-[500px] md:h-[600px]">
             <StyledImage
-              src="/images/about/Grace-Park-1.jpeg"
+              src={GracePark}
               alt="Grace Park, Founder and CEO of Ivy Plus Consulting"
               className="h-full rounded-lg"
             />
