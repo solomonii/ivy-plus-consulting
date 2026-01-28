@@ -18,7 +18,7 @@ const AboutUs: React.FC = () => {
           {/* Left Column - Image */}
           <div className="h-[500px] md:h-[600px]">
             <StyledImage
-              src="/images/about/grace-park.jpg"
+              src="/images/about/Grace-Park-1.jpeg"
               alt="Grace Park, Founder and CEO of Ivy Plus Consulting"
               className="h-full rounded-lg"
             />
